@@ -63,7 +63,6 @@ public class ThePlanController {
         User thisUser = userDao.getOne(thisAuthor.getId());
         Group group = groupDao.findById(thisUser.getGroupID()).orElse(null);
         if (group == null) {
-            //Returns empty list
             return new ArrayList<Item>();
         }
         return group.getItems();
@@ -79,7 +78,7 @@ public class ThePlanController {
         Group currentGroup = groupDao.getOne(groupId);
         item.setGroup(currentGroup);
         itemDao.save(item);
-        return "redirect:/the-plan";
+        return "redirect:/the-plan#checklist-items";
     }
 
     //DOCS
@@ -90,7 +89,6 @@ public class ThePlanController {
         User thisUser = userDao.getOne(thisAuthor.getId());
         Group group = groupDao.findById(thisUser.getGroupID()).orElse(null);
         if (group == null) {
-            //Returns empty list
             return new ArrayList<Doc>();
         }
         return group.getDocs();
@@ -106,7 +104,7 @@ public class ThePlanController {
         Group currentGroup = groupDao.getOne(groupId);
         doc.setGroup(currentGroup);
         docDao.save(doc);
-        return "redirect:/the-plan";
+        return "redirect:/the-plan#document-items";
     }
 
 

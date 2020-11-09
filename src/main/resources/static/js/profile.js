@@ -1,5 +1,10 @@
 document.getElementById("invite-email").onclick = function(){
-    alert('Your email invite has been sent.');
+  prompt("Enter an Email Address:");
+  alert('Your email invite has been sent.');
 }
+
+// document.getElementById("invite-email").onclick = function(){
+//     alert('Your email invite has been sent.');
+// }
 
 
